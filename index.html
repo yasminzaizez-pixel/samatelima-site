@@ -1,0 +1,1358 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAMA TÉLÉMAN - Votre colis, notre engagement partout au Mali</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --vert-fonce: #0E7C3A;
+            --jaune: #F4B400;
+            --blanc: #FFFFFF;
+            --gris-fonce: #2E2E2E;
+            --gris-clair: #f5f5f5;
+            --gris-moyen: #e0e0e0;
+            --bleu: #2196F3;
+            --vert-clair: #4CAF50;
+            --rouge: #f44336;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--gris-fonce);
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 4px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .btn-vert {
+            background-color: var(--vert-fonce);
+            color: var(--blanc);
+        }
+        
+        .btn-vert:hover {
+            background-color: #0a5c2c;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(14, 124, 58, 0.2);
+        }
+        
+        .btn-blanc {
+            background-color: var(--blanc);
+            color: var(--vert-fonce);
+            border: 2px solid var(--vert-fonce);
+        }
+        
+        .btn-blanc:hover {
+            background-color: var(--vert-fonce);
+            color: var(--blanc);
+        }
+        
+        .btn-jaune {
+            background-color: var(--jaune);
+            color: var(--gris-fonce);
+        }
+        
+        .btn-jaune:hover {
+            background-color: #e0a000;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(244, 180, 0, 0.2);
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--vert-fonce);
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--gris-fonce);
+        }
+        
+        /* HEADER */
+        header {
+            background-color: var(--blanc);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo h1 {
+            font-size: 1.8rem;
+            color: var(--vert-fonce);
+            margin-left: 10px;
+        }
+        
+        .logo span {
+            color: var(--jaune);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--gris-fonce);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--vert-fonce);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--vert-fonce);
+            cursor: pointer;
+        }
+        
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--blanc);
+            text-align: center;
+            padding: 180px 0 100px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        /* TRACKING SECTION */
+        .tracking {
+            background-color: var(--gris-clair);
+            position: relative;
+        }
+        
+        .tracking-card {
+            background-color: var(--blanc);
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .tracking-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--vert-fonce);
+        }
+        
+        .tracking-card i {
+            font-size: 2.5rem;
+            color: var(--jaune);
+            margin-bottom: 20px;
+        }
+        
+        .tracking-form {
+            display: flex;
+            margin-top: 30px;
+        }
+        
+        .tracking-input {
+            flex-grow: 1;
+            padding: 15px 20px;
+            border: 2px solid var(--gris-moyen);
+            border-radius: 4px 0 0 4px;
+            font-size: 16px;
+        }
+        
+        .tracking-btn {
+            border-radius: 0 4px 4px 0;
+            padding: 15px 30px;
+        }
+        
+        .loading {
+            display: none;
+            color: var(--vert-fonce);
+            margin-top: 20px;
+        }
+        
+        .result {
+            margin-top: 40px;
+            padding: 25px;
+            background-color: var(--gris-clair);
+            border-radius: 8px;
+            border-left: 4px solid var(--vert-fonce);
+            text-align: left;
+            display: none;
+        }
+        
+        .result.show {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .error {
+            background-color: #ffebee;
+            border-left-color: var(--rouge);
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 4px;
+            color: var(--rouge);
+        }
+        
+        .result-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--gris-moyen);
+        }
+        
+        .status-badge {
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        
+        .status-enregistre {
+            background-color: var(--gris-moyen);
+            color: var(--gris-fonce);
+        }
+        
+        .status-en-transit {
+            background-color: var(--bleu);
+            color: var(--blanc);
+        }
+        
+        .status-en-livraison {
+            background-color: #FF9800;
+            color: var(--blanc);
+        }
+        
+        .status-livre {
+            background-color: var(--vert-clair);
+            color: var(--blanc);
+        }
+        
+        .status-annule {
+            background-color: var(--rouge);
+            color: var(--blanc);
+        }
+        
+        .result-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .info-item {
+            margin-bottom: 15px;
+        }
+        
+        .info-label {
+            font-weight: bold;
+            color: var(--vert-fonce);
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .info-value {
+            color: var(--gris-fonce);
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* SERVICES SECTION */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .service-card {
+            background-color: var(--blanc);
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-card i {
+            font-size: 2.5rem;
+            color: var(--vert-fonce);
+            margin-bottom: 20px;
+        }
+        
+        .service-card h3 {
+            margin-bottom: 15px;
+            color: var(--gris-fonce);
+        }
+        
+        /* COVERAGE SECTION */
+        .coverage {
+            background-color: var(--gris-clair);
+        }
+        
+        .coverage-container {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .coverage-map {
+            flex: 1;
+            position: relative;
+        }
+        
+        .map-image {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .map-point {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: var(--jaune);
+            border-radius: 50%;
+            box-shadow: 0 0 0 5px rgba(244, 180, 0, 0.3);
+        }
+        
+        .bamako {
+            top: 40%;
+            left: 45%;
+        }
+        
+        .kayes {
+            top: 30%;
+            left: 20%;
+        }
+        
+        .kenieba {
+            top: 50%;
+            left: 25%;
+        }
+        
+        .coverage-content {
+            flex: 1;
+        }
+        
+        .coverage-content h2 {
+            color: var(--vert-fonce);
+            margin-bottom: 20px;
+        }
+        
+        /* WHY CHOOSE US SECTION */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+        
+        .feature i {
+            color: var(--vert-fonce);
+            font-size: 1.8rem;
+            margin-top: 5px;
+        }
+        
+        .feature h3 {
+            margin-bottom: 10px;
+        }
+        
+        /* HOW IT WORKS SECTION */
+        .how-it-works {
+            background-color: var(--gris-clair);
+        }
+        
+        .timeline {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin-top: 50px;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 30px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--gris-moyen);
+        }
+        
+        .timeline-step {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            width: 20%;
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: var(--blanc);
+            border: 3px solid var(--vert-fonce);
+            color: var(--vert-fonce);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 20px;
+        }
+        
+        /* TESTIMONIALS SECTION */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .testimonial-card {
+            background-color: var(--blanc);
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: var(--gris-clair);
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--vert-fonce);
+        }
+        
+        .stars {
+            color: var(--jaune);
+            margin-bottom: 5px;
+        }
+        
+        .client-city {
+            color: var(--vert-fonce);
+            font-weight: bold;
+        }
+        
+        /* CONTACT SECTION */
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .contact-info {
+            display: grid;
+            gap: 30px;
+        }
+        
+        .contact-city {
+            background-color: var(--gris-clair);
+            padding: 25px;
+            border-radius: 8px;
+        }
+        
+        .contact-city h3 {
+            color: var(--vert-fonce);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .contact-city h3 i {
+            color: var(--jaune);
+        }
+        
+        .phone-numbers {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .phone-numbers a {
+            text-decoration: none;
+            color: var(--gris-fonce);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: color 0.3s;
+        }
+        
+        .phone-numbers a:hover {
+            color: var(--vert-fonce);
+        }
+        
+        .contact-email {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid var(--gris-moyen);
+        }
+        
+        .contact-email a {
+            color: var(--vert-fonce);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+            background-color: #25D366;
+            color: var(--blanc);
+        }
+        
+        .whatsapp-btn:hover {
+            background-color: #1da851;
+        }
+        
+        /* FOOTER */
+        footer {
+            background-color: var(--gris-fonce);
+            color: var(--blanc);
+            padding: 60px 0 30px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-logo h2 {
+            color: var(--blanc);
+            margin-bottom: 10px;
+        }
+        
+        .footer-logo p {
+            opacity: 0.8;
+        }
+        
+        .footer-links h3, .footer-social h3 {
+            color: var(--blanc);
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: var(--gris-moyen);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--blanc);
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--blanc);
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--vert-fonce);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.7;
+        }
+        
+        /* RESPONSIVE */
+        @media (max-width: 992px) {
+            .coverage-container {
+                flex-direction: column;
+            }
+            
+            .timeline {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 40px;
+            }
+            
+            .timeline::before {
+                display: none;
+            }
+            
+            .timeline-step {
+                width: 45%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--blanc);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links li {
+                margin: 10px 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .tracking-form {
+                flex-direction: column;
+            }
+            
+            .tracking-input {
+                border-radius: 4px;
+                margin-bottom: 10px;
+            }
+            
+            .tracking-btn {
+                border-radius: 4px;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .timeline-step {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="header-container container">
+            <div class="logo">
+                <i class="fas fa-truck-moving" style="font-size: 2rem; color: var(--vert-fonce);"></i>
+                <h1>SAMA <span>TÉLÉMAN</span></h1>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#tracking">Suivi colis</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="accueil">
+        <div class="hero-content container">
+            <h2>Votre colis, notre engagement partout au Mali</h2>
+            <p>Livraison rapide et sécurisée pour particuliers, commerçants, PME et entreprises à travers tout le Mali</p>
+            <div class="hero-buttons">
+                <a href="#tracking" class="btn btn-vert"><i class="fas fa-search"></i> Suivre un colis</a>
+                <a href="#contact" class="btn btn-blanc"><i class="fas fa-shipping-fast"></i> Envoyer un colis</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRACKING SECTION -->
+    <section class="tracking" id="tracking">
+        <div class="container">
+            <div class="tracking-card">
+                <i class="fas fa-search"></i>
+                <h3>Suivez votre colis en temps réel</h3>
+                <p>Entrez votre numéro de suivi pour connaître l'état de votre livraison</p>
+                
+                <div class="tracking-form">
+                    <input type="text" class="tracking-input" id="trackingNumber" 
+                           placeholder="Numéro de suivi (ex: SL-20251221-0001)">
+                    <button class="btn btn-jaune tracking-btn" id="trackBtn">SUIVRE MON COLIS</button>
+                </div>
+                
+                <div id="loading" class="loading" style="display: none;">
+                    <i class="fas fa-spinner fa-spin"></i> Recherche de votre colis...
+                </div>
+                
+                <!-- Résultat du suivi (initialement caché) -->
+                <div id="result" class="result">
+                    <div class="result-header">
+                        <h3>Informations de votre colis</h3>
+                        <div class="status-badge" id="statusBadge">Enregistré</div>
+                    </div>
+                    
+                    <div class="result-grid">
+                        <div class="info-item">
+                            <span class="info-label">Numéro de suivi :</span>
+                            <span class="info-value" id="trackingNum">-</span>
+                        </div>
+                        
+                        <div class="info-item">
+                            <span class="info-label">Statut :</span>
+                            <span class="info-value" id="status">-</span>
+                        </div>
+                        
+                        <div class="info-item">
+                            <span class="info-label">Destination :</span>
+                            <span class="info-value" id="destination">-</span>
+                        </div>
+                        
+                        <div class="info-item">
+                            <span class="info-label">Type de colis :</span>
+                            <span class="info-value" id="packageType">-</span>
+                        </div>
+                        
+                        <div class="info-item">
+                            <span class="info-label">Destinataire :</span>
+                            <span class="info-value" id="receiver">-</span>
+                        </div>
+                        
+                        <div class="info-item">
+                            <span class="info-label">Date d'enregistrement :</span>
+                            <span class="info-value" id="createdAt">-</span>
+                        </div>
+                        
+                        <div class="info-item">
+                            <span class="info-label">Date de livraison :</span>
+                            <span class="info-value" id="deliveredAt">-</span>
+                        </div>
+                    </div>
+                    
+                    <div id="error" class="error" style="display: none;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nos Services</h2>
+                <p>Découvrez notre gamme complète de services de livraison et logistique adaptés à vos besoins</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-shipping-fast"></i>
+                    <h3>Livraison Express</h3>
+                    <p>Livraison rapide dans les plus brefs délais à travers tout le Mali</p>
+                </div>
+                
+                <div class="service-card">
+                    <i class="fas fa-warehouse"></i>
+                    <h3>Logistique & Stockage</h3>
+                    <p>Solutions de stockage et gestion d'entrepôts pour entreprises</p>
+                </div>
+                
+                <div class="service-card">
+                    <i class="fas fa-building"></i>
+                    <h3>Livraison Entreprises</h3>
+                    <p>Services dédiés aux PME et grandes entreprises avec suivi personnalisé</p>
+                </div>
+                
+                <div class="service-card">
+                    <i class="fas fa-motorcycle"></i>
+                    <h3>Livraison Urbaine</h3>
+                    <p>Livraison rapide en ville par nos coursiers à moto</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COVERAGE SECTION -->
+    <section class="coverage">
+        <div class="container">
+            <div class="coverage-container">
+                <div class="coverage-map">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/92/Map_of_Mali.svg" alt="Carte du Mali" class="map-image">
+                    <div class="map-point bamako" title="Bamako"></div>
+                    <div class="map-point kayes" title="Kayes"></div>
+                    <div class="map-point kenieba" title="Kéniéba"></div>
+                </div>
+                <div class="coverage-content">
+                    <h2>Zones de Couverture</h2>
+                    <p>Nous desservons l'ensemble du territoire malien avec un réseau en expansion constante</p>
+                    <ul style="margin-top: 20px; list-style-position: inside;">
+                        <li style="margin-bottom: 10px;">Bamako et régions environnantes</li>
+                        <li style="margin-bottom: 10px;">Kayes et Kéniéba</li>
+                        <li style="margin-bottom: 10px;">Sikasso, Ségou, Mopti</li>
+                        <li style="margin-bottom: 10px;">Gao, Kidal, Tombouctou</li>
+                    </ul>
+                    <p style="margin-top: 20px; font-weight: bold; color: var(--vert-fonce);">Livraison nationale rapide et sécurisée</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US SECTION -->
+    <section>
+        <div class="container">
+            <div class="section-title">
+                <h2>Pourquoi Nous Choisir ?</h2>
+                <p>Découvrez les avantages qui font de SAMA TÉLÉMAN votre partenaire de confiance</p>
+            </div>
+            
+            <div class="features">
+                <div class="feature">
+                    <i class="fas fa-bolt"></i>
+                    <div>
+                        <h3>Rapidité</h3>
+                        <p>Délais de livraison optimisés grâce à notre réseau de transport efficace</p>
+                    </div>
+                </div>
+                
+                <div class="feature">
+                    <i class="fas fa-shield-alt"></i>
+                    <div>
+                        <h3>Sécurité</h3>
+                        <p>Vos colis sont assurés et suivis à chaque étape du transport</p>
+                    </div>
+                </div>
+                
+                <div class="feature">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h3>Suivi en temps réel</h3>
+                        <p>Suivez votre colis à chaque étape de son trajet</p>
+                    </div>
+                </div>
+                
+                <div class="feature">
+                    <i class="fas fa-headset"></i>
+                    <div>
+                        <h3>Service client local</h3>
+                        <p>Une équipe dédiée et réactive pour répondre à vos besoins</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS SECTION -->
+    <section class="how-it-works">
+        <div class="container">
+            <div class="section-title">
+                <h2>Comment Ça Marche</h2>
+                <p>Notre processus simple et efficace en 5 étapes</p>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-step">
+                    <div class="step-number">1</div>
+                    <h3>Dépôt</h3>
+                    <p>Déposez votre colis dans l'un de nos points de collecte</p>
+                </div>
+                
+                <div class="timeline-step">
+                    <div class="step-number">2</div>
+                    <h3>Numéro de suivi</h3>
+                    <p>Recevez un numéro unique pour suivre votre colis</p>
+                </div>
+                
+                <div class="timeline-step">
+                    <div class="step-number">3</div>
+                    <h3>Transport</h3>
+                    <p>Votre colis est acheminé vers sa destination</p>
+                </div>
+                
+                <div class="timeline-step">
+                    <div class="step-number">4</div>
+                    <h3>Livraison</h3>
+                    <p>Notre livreur vous contacte pour planifier la livraison</p>
+                </div>
+                
+                <div class="timeline-step">
+                    <div class="step-number">5</div>
+                    <h3>Confirmation</h3>
+                    <p>Recevez une confirmation de livraison réussie</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section>
+        <div class="container">
+            <div class="section-title">
+                <h2>Témoignages</h2>
+                <p>Ce que disent nos clients satisfaits</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="client-city">Bamako</div>
+                        </div>
+                    </div>
+                    <p>"Service rapide et professionnel. Mon colis est arrivé à Kayes en seulement 2 jours. Je recommande vivement SAMA TÉLÉMAN!"</p>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <div class="client-city">Kayes</div>
+                        </div>
+                    </div>
+                    <p>"En tant que commerçant, j'ai besoin d'un service fiable. SAMA TÉLÉMAN n'a jamais déçu. Le suivi en temps réel est un vrai plus."</p>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="client-city">Sikasso</div>
+                        </div>
+                    </div>
+                    <p>"Livraison toujours ponctuelle. Le service client est réactif et sympathique. Mon entreprise travaille exclusivement avec eux."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contactez-nous</h2>
+                <p>Notre équipe est à votre écoute pour répondre à toutes vos questions</p>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-city">
+                        <h3><i class="fas fa-map-marker-alt"></i> BAMAKO</h3>
+                        <div class="phone-numbers">
+                            <a href="tel:74520157"><i class="fas fa-phone"></i> 74 52 01 57</a>
+                            <a href="tel:76558724"><i class="fas fa-phone"></i> 76 55 87 24</a>
+                            <a href="tel:6424222"><i class="fas fa-phone"></i> 64 24 24 22</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-city">
+                        <h3><i class="fas fa-map-marker-alt"></i> KÉNIÉBA</h3>
+                        <div class="phone-numbers">
+                            <a href="tel:73071892"><i class="fas fa-phone"></i> 73 07 18 92</a>
+                            <a href="tel:65559454"><i class="fas fa-phone"></i> 65 55 94 54</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-email">
+                        <p><strong>Email:</strong> <a href="mailto:contact@samatelima.com">contact@samatelima.com</a></p>
+                    </div>
+                    
+                    <a href="https://wa.me/22374520157" class="btn whatsapp-btn" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Contacter maintenant sur WhatsApp
+                    </a>
+                </div>
+                
+                <div>
+                    <h3 style="color: var(--vert-fonce); margin-bottom: 20px;">Heures d'ouverture</h3>
+                    <div style="background-color: var(--gris-clair); padding: 25px; border-radius: 8px;">
+                        <p><strong>Lundi - Vendredi:</strong> 7h30 - 18h30</p>
+                        <p><strong>Samedi:</strong> 8h00 - 16h00</p>
+                        <p><strong>Dimanche:</strong> 9h00 - 13h00</p>
+                        <p style="margin-top: 15px; font-style: italic;">Services de dépôt et retrait disponibles pendant les heures d'ouverture</p>
+                    </div>
+                    
+                    <h3 style="color: var(--vert-fonce); margin-top: 40px; margin-bottom: 20px;">Points de collecte</h3>
+                    <div style="background-color: var(--gris-clair); padding: 25px; border-radius: 8px;">
+                        <p><strong>Bamako Centre:</strong> Avenue de la Nation, face au marché</p>
+                        <p><strong>Kayes Gare:</strong> Près de la gare routière</p>
+                        <p><strong>Kéniéba Centre:</strong> Rue principale, à côté de la mairie</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-logo">
+                    <h2>SAMA <span style="color: var(--jaune);">TÉLÉMAN</span></h2>
+                    <p>Votre colis, notre engagement partout au Mali</p>
+                    <p style="margin-top: 20px;">Service de livraison et logistique fiable et rapide à travers tout le Mali</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Liens rapides</h3>
+                    <ul>
+                        <li><a href="#accueil">Accueil</a></li>
+                        <li><a href="#tracking">Suivi colis</a></li>
+                        <li><a href="#services">Nos services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-social">
+                    <h3>Suivez-nous</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <p style="margin-top: 20px; opacity: 0.8;">Restez informé de nos actualités et promotions</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 <strong>SAMA TÉLÉMAN</strong>. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Menu mobile
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Fermer le menu en cliquant sur un lien
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Système de suivi de colis avec API
+        const API_URL = 'https://3000-iwzbaitq7c8f56dzniz8r-1026e9aa.manusvm.computer/api/trpc';
+        const trackBtn = document.getElementById('trackBtn');
+        const trackingNumberInput = document.getElementById('trackingNumber');
+        const loadingDiv = document.getElementById('loading');
+        const resultDiv = document.getElementById('result');
+        const errorDiv = document.getElementById('error');
+        
+        async function trackPackage() {
+            const trackingNumber = trackingNumberInput.value.trim();
+            
+            if (!trackingNumber) {
+                alert('Veuillez entrer un numéro de suivi');
+                return;
+            }
+            
+            // Afficher le loading
+            loadingDiv.style.display = 'block';
+            resultDiv.classList.remove('show');
+            errorDiv.style.display = 'none';
+            
+            try {
+                // API call
+                const response = await fetch(
+                    `${API_URL}/tracking.track?input=${JSON.stringify({ trackingNumber })}`,
+                    {
+                        method: 'GET',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                    }
+                );
+ 
+                if (!response.ok) {
+                    throw new Error('Colis non trouvé');
+                }
+ 
+                const data = await response.json();
+                const packageData = data.result.data;
+                
+                // Mettre à jour l'interface avec les données
+                updateTrackingUI(packageData);
+                
+            } catch (error) {
+                // Afficher l'erreur
+                errorDiv.textContent = `Erreur: ${error.message}`;
+                errorDiv.style.display = 'block';
+                resultDiv.classList.add('show');
+            } finally {
+                loadingDiv.style.display = 'none';
+            }
+        }
+        
+        function updateTrackingUI(packageData) {
+            // Mettre à jour les informations du colis
+            document.getElementById('trackingNum').textContent = packageData.trackingNumber;
+            document.getElementById('status').textContent = packageData.status;
+            document.getElementById('destination').textContent = packageData.destination;
+            document.getElementById('packageType').textContent = packageData.packageType;
+            document.getElementById('receiver').textContent = 
+                `${packageData.receiverFirstName} ${packageData.receiverLastName}`;
+            document.getElementById('createdAt').textContent = 
+                new Date(packageData.createdAt).toLocaleDateString('fr-FR');
+            document.getElementById('deliveredAt').textContent = 
+                packageData.deliveredAt 
+                    ? new Date(packageData.deliveredAt).toLocaleDateString('fr-FR')
+                    : 'En cours de livraison';
+            
+            // Mettre à jour le badge de statut
+            const statusBadge = document.getElementById('statusBadge');
+            statusBadge.textContent = packageData.status;
+            
+            // Appliquer la classe CSS appropriée selon le statut
+            statusBadge.className = 'status-badge ';
+            switch(packageData.status.toLowerCase()) {
+                case 'enregistré':
+                    statusBadge.classList.add('status-enregistre');
+                    break;
+                case 'en transit':
+                    statusBadge.classList.add('status-en-transit');
+                    break;
+                case 'en livraison':
+                    statusBadge.classList.add('status-en-livraison');
+                    break;
+                case 'livré':
+                    statusBadge.classList.add('status-livre');
+                    break;
+                case 'annulé':
+                    statusBadge.classList.add('status-annule');
+                    break;
+                default:
+                    statusBadge.classList.add('status-enregistre');
+            }
+            
+            // Afficher le résultat
+            resultDiv.classList.add('show');
+            errorDiv.style.display = 'none';
+            
+            // Défilement vers le résultat
+            resultDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+        
+        // Événements
+        trackBtn.addEventListener('click', trackPackage);
+        
+        // Permettre la recherche avec la touche Entrée
+        trackingNumberInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                trackPackage();
+            }
+        });
+        
+        // Animation au défilement
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observer les éléments à animer
+        document.querySelectorAll('.service-card, .feature, .testimonial-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(el);
+        });
+        
+        // Exemple de numéro de suivi pour démonstration
+        trackingNumberInput.value = 'SL-20251221-0001';
+    </script>
+</body>
+</html>
